@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { buildServer } from "./server.js";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";

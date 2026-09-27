@@ -84,7 +84,7 @@ export class SupabaseEventRepository implements EventRepository {
       location: row.location, category: row.category, imageUrl: row.image_url, hostName: row.host_name,
       hostId: row.host_id, attendeeCount: row.attendee_count,
       attendeeAvatars: ["https://i.pravatar.cc/80?img=47", "https://i.pravatar.cc/80?img=12", "https://i.pravatar.cc/80?img=33"],
-      isAttending: attending.has(row.id), createdAt: row.created_at,
+      isAttending: attending.has(row.id), createdAt: new Date(row.created_at).toISOString(),
     };
   }
 

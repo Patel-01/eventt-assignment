@@ -1,7 +1,7 @@
 import { createEventSchema, eventListSchema, eventSchema, type CreateEventInput, type EventDto, type UpdateEventInput } from "@events/api-contracts";
 import { isDemoMode } from "./supabase-client.js";
 
-const apiBase = (import.meta.env.VITE_API_URL as string | undefined) ?? (import.meta.env.PROD ? "/api/v1" : "http://localhost:4000/api/v1");
+const apiBase = (import.meta.env.VITE_API_URL as string | undefined) ?? "/api/v1";
 
 export class ApiError extends Error {
   constructor(message: string, readonly status: number) { super(message); this.name = "ApiError"; }

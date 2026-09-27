@@ -8,5 +8,8 @@
     "build": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api build && pnpm --filter @events/web build",
     "typecheck": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api typecheck && pnpm --filter @events/web typecheck",
     "test": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api test && pnpm --filter @events/web test"
+  },
+  "devDependencies": {
+    "supabase": "2.118.0"
   }
 }

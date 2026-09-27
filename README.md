@@ -18,6 +18,8 @@ An event discovery and RSVP experience built as a pnpm monorepo. The React clien
 
 To use Supabase, copy `.env.example` values into `apps/api/.env` and `apps/web/.env.local`, apply `supabase/migrations/202609260001_events.sql`, and configure Supabase Auth email magic links with Resend SMTP. Add the deployed web origin to Supabase's allowed redirect URLs. Never put a service role key in the browser.
 
+The Supabase CLI is pinned as a workspace development dependency. Sign in with `pnpm exec supabase login`, review available projects with `pnpm exec supabase projects list`, link the intended project with `pnpm exec supabase link --project-ref <project-ref>`, inspect pending changes using `pnpm exec supabase db push --dry-run`, then apply them with `pnpm exec supabase db push`. The migration includes the demo event rows, so no separate seed file is needed. Configure production magic-link SMTP in the Supabase Auth settings with the Resend SMTP credentials; keep those credentials in the Supabase dashboard, not in this repo.
+
 The production API defaults to the same-origin `/api/v1` path. `VITE_API_URL` is only needed to override that path during local development.
 
 ## API

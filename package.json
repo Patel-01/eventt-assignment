@@ -1,0 +1,12 @@
+{
+  "name": "eventt-platform",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev": "pnpm --filter @events/api-contracts build && pnpm --parallel --filter @events/api --filter @events/web dev:watch",
+    "build": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api build && pnpm --filter @events/web build",
+    "typecheck": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api typecheck && pnpm --filter @events/web typecheck",
+    "test": "pnpm --filter @events/api-contracts build && pnpm --filter @events/api test && pnpm --filter @events/web test"
+  }
+}

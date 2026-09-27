@@ -30,8 +30,10 @@ a { color: inherit; text-decoration: none; }
 .primary-nav a { display: inline-flex; align-items: center; gap: 8px; color: #7c7d74; font-size: 12px; letter-spacing: .02em; transition: color .2s; }
 .primary-nav a:hover, .primary-nav a.active { color: var(--rust); }
 .header-actions { display: flex; align-items: center; gap: 25px; }
-.create-link { display: inline-flex; gap: 8px; align-items: center; font-size: 12px; font-weight: 600; }
-.plus { display: inline-grid; place-items: center; width: 21px; height: 21px; color: var(--rust); border: 1px solid #e2b19e; border-radius: 50%; font-size: 16px; font-weight: 400; }
+.create-link { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 14px; border: 1px solid #d8b9ab; border-radius: 6px; background: #fbefe7; color: #93452f; font-size: 13px; font-weight: 600; line-height: 1; white-space: nowrap; transition: background-color .2s, border-color .2s, color .2s; }
+.create-link svg { flex-shrink: 0; }
+.create-link:hover { background: #f4e1d7; border-color: #b9674e; color: #7c3524; }
+.create-link:active { background: #ecd2c4; }
 .sign-in-button { height: 39px; padding: 0 16px; border: 1px solid #d5d2c9; border-radius: 2px; background: transparent; font-size: 11px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: .2s; }
 .sign-in-button:hover { background: var(--ink); color: white; border-color: var(--ink); }
 .user-menu { display: flex; align-items: center; gap: 9px; }
@@ -287,7 +289,7 @@ a { color: inherit; text-decoration: none; }
   .brand-mark { width: 28px; height: 28px; font-size: 20px; }
   .primary-nav { display: none; }
   .header-actions { gap: 14px; }
-  .header-actions .create-link { font-size: 10px; }
+  .header-actions .create-link { gap: 6px; padding: 0 8px; font-size: 12px; }
   .sign-in-button { height: 34px; padding: 0 10px; }
   .user-name { display: none; }
   .mobile-menu { display: none; }
@@ -359,8 +361,7 @@ a { color: inherit; text-decoration: none; }
   .auth-modal { padding: 31px 25px; }
 }
 @media (max-width: 430px) {
-  .header-actions .create-link { gap: 5px; }
-  .header-actions .plus { width: 18px; height: 18px; font-size: 14px; }
+  .header-actions { gap: 10px; }
   .sign-in-button { font-size: 10px; gap: 4px; }
   .event-grid { column-gap: 11px; }
   .card-image-link, .event-card-1 .card-image-link { height: 135px; }

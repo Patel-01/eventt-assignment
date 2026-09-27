@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, ChevronDown, Clock3, Compass, Heart, MapPin, Menu, Search, Sparkles, TicketCheck, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Check, ChevronDown, Clock3, Compass, Heart, MapPin, Menu, Plus, Search, Sparkles, TicketCheck, X } from "lucide-react";
 import { eventCategorySchema, type CreateEventInput, type EventDto } from "@events/api-contracts";
 import { useAuth } from "./shared/auth-context.js";
 import { eventsApi } from "./shared/events-api.js";
@@ -32,7 +32,7 @@ export function App() {
           <Link className={location.pathname === "/my-events" ? "active" : ""} to="/my-events"><TicketCheck size={16} /> My plans</Link>
         </nav>
         <div className="header-actions">
-          <Link className="create-link" to="/events/new"><span className="plus">+</span> Host an event</Link>
+          <Link className="create-link" to="/events/new"><Plus size={16} aria-hidden="true" /> Host an event</Link>
           {user ? <div className="user-menu"><span className="avatar avatar-user">{initials(user.name)}</span><button className="user-name" onClick={() => void signOut()} title="Sign out">{user.name.split(" ")[0]} <ChevronDown size={14} /></button></div> : <button className="sign-in-button" onClick={() => setAuthOpen(true)}>Sign in <ArrowUpRight size={15} /></button>}
           <button className="mobile-menu" aria-label="Open menu" onClick={() => setAuthOpen(true)}><Menu /></button>
         </div>
